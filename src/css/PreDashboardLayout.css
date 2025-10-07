@@ -1,0 +1,13 @@
+.pre_dashboard_layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.pre_dashboard_content {
+    flex-grow: 1; /* Faz o conteúdo ocupar o espaço restante */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

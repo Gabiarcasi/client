@@ -1,0 +1,89 @@
+/* Variáveis de cor para fácil manutenção */
+:root {
+  --gold-color: #c9a96a; /* Um tom de dourado elegante */
+  --text-color: #555;
+  --heading-font: 'Garamond', serif; /* Uma fonte serifada para um toque de luxo */
+}
+
+.landing_page_section {
+  padding: 80px 0;
+}
+
+/* Estilos da Seção Principal (Hero) */
+.hero_section {
+  background-color: #fff;
+  text-align: center;
+}
+
+.hero_headline {
+  font-family: var(--heading-font);
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.hero_subheadline {
+  font-size: 1.25rem;
+  color: var(--text-color);
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+/* Estilos da Seção de Funcionalidades */
+.features_section {
+  background-color: #f9f9f9;
+}
+
+.section_title {
+  text-align: center;
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  position: relative; /* Para o detalhe dourado */
+}
+
+/* Detalhe dourado abaixo do título */
+.section_title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: var(--gold-color);
+  margin: 15px auto 0 auto;
+}
+
+.feature_item {
+  text-align: center;
+  padding: 20px;
+}
+
+.feature_icon {
+  font-size: 2.5rem; /* Você precisará de uma biblioteca de ícones para isso */
+  color: var(--gold-color);
+  margin-bottom: 1rem;
+}
+
+.feature_title {
+  font-size: 1.5rem;
+  font-family: var(--heading-font);
+  margin-bottom: 0.5rem;
+}
+
+/* Estilos da Seção de Depoimentos */
+.testimonial_section {
+  background-color: #fff;
+}
+
+.testimonial_text {
+  font-style: italic;
+  color: var(--text-color);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.testimonial_author {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: var(--gold-color);
+}

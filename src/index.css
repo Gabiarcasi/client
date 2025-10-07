@@ -1,0 +1,105 @@
+:root {
+  --success-bg: #eaf6ec;
+  --error-bg: #f8d7da;
+	--primary-color: #6C757D; /* Exemplo de cinza */
+	--primary-color-dark: #5A6268;
+	--gold-color: #C9A96A; /* Cor de destaque */
+	--gold-rgb: 201, 169, 106; /* Versão RGB da cor gold para sombras */
+	--text-color: #343a40;
+	--text-color-light: #6c757d;
+	--text-color-dark: #212529;
+	--heading-color: #212529;
+	--background-color: #f8f9fa; /* Fundo geral da app */
+  	--background-light: #f8f9fa;
+	--light-gray-background: #e9ecef; /* Fundo para seções de modal/card */
+	--white: #ffffff;
+
+	/* Status/Feedback Colors */
+	--success-text: #28a745;
+	--error-text: #dc3545;
+	--blue-color: #007bff; /* Para valores pagos, por exemplo */
+	--neutral-color-dark: #495057; /* Para status 'Pendente' */
+
+	/* Espaçamento */
+	--spacing-1: 8px;
+	--spacing-2: 15px;
+	--spacing-3: 20px;
+	--spacing-4: 30px;
+	--spacing-5: 40px;
+
+	/* Bordas e Sombras */
+	--border-color: #dee2e6;
+	--border-color-light: #f0f0f0;
+	--border-radius: 8px;
+	--border-radius-large: 12px;
+	--shadow-elevation-1: 0 2px 4px rgba(0, 0, 0, 0.05);
+	--shadow-elevation-2: 0 4px 8px rgba(0, 0, 0, 0.08);
+	--shadow-elevation-3: 0 8px 16px rgba(0, 0, 0, 0.1); /* Para modais */
+	--shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+	/* Tipografia */
+	--main-font: 'Roboto', sans-serif; /* Exemplo, use a sua fonte */
+	--heading-font: 'Garamond', serif; /* Exemplo, use a sua fonte */
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff; /* Garante o fundo branco */
+}
+
+.button_primary {
+    background-color: var(--gold-color) !important;
+    border: 1px solid var(--gold-color) !important;
+    color: #fff !important;
+    padding: 12px 35px !important;
+    font-size: 1.1rem !important;
+    border-radius: 50px !important;
+    text-decoration: none  !important;
+    transition: all 0.3s ease  !important;
+    width: 100%  !important;
+    margin-top: 1rem  !important;
+}
+
+.button_primary:hover {
+    background-color: #fff !important;
+    color: var(--gold-color) !important;
+}
+
+.button_secondary {
+    background-color: transparent !important;
+    border: 1px solid var(--gold-color) !important;
+    color: var(--gold-color) !important;
+    padding: 12px 35px !important;
+    font-size: 1.1rem !important;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    width: 100% !important;
+    margin-top: 1rem !important;
+}
+
+.button_secondary:hover {
+    background-color: var(--gold-color) !important;
+    color: var(--white) !important;
+}
+
+.action_button {
+    background-color: transparent;
+    border: none;
+    color: var(--gold-color);
+    font-size: 1.1rem;
+}
+
+.action_button:hover {
+    background-color: #fff;
+    color: var(--gold-color);
+}
+
+.widget_placeholder_text{
+	color: #00000053;
+}

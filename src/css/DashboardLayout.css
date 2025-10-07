@@ -1,0 +1,122 @@
+.dashboard_layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.dashboard_sidebar {
+    width: 260px;
+    background-color: #ffffff;
+    border-right: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.sidebar_header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sidebar_logo {
+    height: 45px;
+    width: auto;
+}
+
+.sidebar_nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaçamento entre os links */
+}
+
+.sidebar_nav_link {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+.sidebar_nav_link:hover {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Estilo para o link ativo (página atual) */
+.sidebar_nav_link.active {
+    background-color: var(--gold-color);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(201, 169, 106, 0.3);
+}
+
+.sidebar_footer {
+    margin-top: auto; /* Empurra o footer para o final */
+}
+
+.logout_button {
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+    width: 100%;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.logout_button:hover {
+    color: #c94c4c;
+}
+
+.dashboard_content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto; /* Permite scroll se o conteúdo for grande */
+}
+
+.sidebar_wedding_info {
+    margin-top: 10px;
+	color: var(--text-color);
+	font-weight: 500;
+}
+
+.sidebar_logout_button{
+    color: #333;
+    background-color: transparent;
+    border: none;
+}
+
+.budget_widget_container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 80%;
+}
+
+.widget_footer {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.widget_footer strong {
+    color: var(--error-text);
+}
+
+.widget_link {
+    color: var(--gold-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.widget_link:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,241 @@
+/* 1. VARIÁVEIS GLOBAIS E ESTILOS DE BASE */
+:root {
+  --success-bg: #eaf6ec;
+  --error-bg: #f8d7da;
+	--primary-color: #6C757D; /* Exemplo de cinza */
+	--primary-color-dark: #5A6268;
+	--gold-color: #C9A96A; /* Cor de destaque */
+	--gold-color-dark: #bb9b5bff; /* Cor de destaque */
+	--gold-rgb: 201, 169, 106; /* Versão RGB da cor gold para sombras */
+	--text-color: #343a40;
+	--text-color-light: #6c757d;
+	--text-color-dark: #212529;
+	--heading-color: #212529;
+	--background-color: #f8f9fa; /* Fundo geral da app */
+  	--background-light: #f8f9fa;
+	--light-gray-background: #e9ecef; /* Fundo para seções de modal/card */
+	--white: #ffffff;
+
+	/* Status/Feedback Colors */
+	--success-text: #28a745;
+	--error-text: #dc3545;
+	--blue-color: #007bff; /* Para valores pagos, por exemplo */
+	--neutral-color-dark: #495057; /* Para status 'Pendente' */
+
+	/* Espaçamento */
+	--spacing-1: 8px;
+	--spacing-2: 15px;
+	--spacing-3: 20px;
+	--spacing-4: 30px;
+	--spacing-5: 40px;
+
+	/* Bordas e Sombras */
+	--border-color: #dee2e6;
+	--border-color-light: #f0f0f0;
+	--border-radius: 8px;
+	--border-radius-large: 12px;
+	--shadow-elevation-1: 0 2px 4px rgba(0, 0, 0, 0.05);
+	--shadow-elevation-2: 0 4px 8px rgba(0, 0, 0, 0.08);
+	--shadow-elevation-3: 0 8px 16px rgba(0, 0, 0, 0.1); /* Para modais */
+	--shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+	/* Tipografia */
+	--main-font: 'Roboto', sans-serif;
+	--heading-font: 'Garamond', serif;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--background-light);
+  color: var(--text-color);
+}
+
+/* 2. CLASSES DE LAYOUT REUTILIZÁVEIS */
+.page_container_centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 15px;
+}
+
+/* 3. SISTEMA DE CARDS */
+.card_base {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+/* 4. SISTEMA DE TIPOGRAFIA */
+.title_h1 {
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #333;
+}
+
+.title_h2 {
+  font-family: var(--heading-font);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.subtitle_main {
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+/* 5. SISTEMA DE FORMULÁRIOS */
+.form_label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form_input {
+  border: 1px solid #ddd !important;
+  border-radius: 4px;
+  padding: 12px;
+  box-shadow: none !important;
+  transition: border-color 0.2s ease;
+}
+
+.form_input:focus {
+  border-color: var(--gold-color) !important;
+}
+
+/* 6. SISTEMA DE BOTÕES */
+.button_primary {
+  background-color: var(--gold-color);
+  border: 1px solid var(--gold-color);
+  color: var(--white);
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+    --bs-btn-color: var(--white);
+    --bs-btn-bg: var(--gold-color);
+    --bs-btn-border-color: var(--gold-color);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--gold-color-dark);
+    --bs-btn-hover-border-color: var(--gold-color-dark);
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--gold-color-dark);
+    --bs-btn-active-border-color: var(--gold-color-dark);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--gold-color);
+    --bs-btn-disabled-border-color: var(--gold-color);
+}
+
+.button_primary:hover {
+  background-color: var(--white);
+  color: var(--gold-color);
+}
+
+.button_primary:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* 7. COMPONENTES REUTILIZÁVEIS */
+
+/* Alertas de Erro/Sucesso */
+.alert_message {
+  padding: 15px;
+  margin: 20px 0;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.alert_error {
+  background-color: var(--error-bg);
+  color: var(--error-text);
+  border-color: var(--error-text);
+}
+
+.alert_success {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+  border-color: var(--success-text);
+}
+
+/* Badges de RSVP */
+.rsvp_badge {
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.rsvp_badge_confirmed {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+}
+
+.rsvp_badge_declined {
+  background-color: var(--error-bg);
+  color: var(--error-text);
+}
+
+.rsvp_badge_pending {
+  background-color: #fff8e1;
+  color: #ffc107;
+}
+
+/* Links Especiais */
+.link_icon {
+  display: inline-block;
+  margin-bottom: 25px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.link_icon i {
+  margin-right: 8px;
+}
+
+.link_icon:hover {
+  color: var(--gold-color);
+}
+
+/* Estilo para Botões de Ação com Ícone (sem fundo/borda, ícone dourado) */
+.button_action {
+    background: none;
+    border: none;
+    padding: 0.25rem 0.5rem; /* Ajuste o padding conforme necessário */
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    font-size: 1.1rem; /* Tamanho do ícone */
+    color: var(--gold-color); /* A cor dourada principal */
+}
+
+.button_action:hover {
+    color: var(--primary-color-dark); /* Um dourado um pouco mais escuro ao passar o mouse, ou um cinza sutil */
+    background-color: rgba(0, 0, 0, 0.05); /* Um fundo sutil ao passar o mouse */
+    border-radius: 4px;
+}
+
+/* Para botões de ação de perigo (ex: excluir) */
+.button_action.text-danger {
+    color: var(--error-text); /* Cor vermelha para ícones de exclusão */
+}
+
+.button_action.text-danger:hover {
+    color: var(--error-color-dark);
+}

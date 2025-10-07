@@ -1,0 +1,94 @@
+/* Títulos da página */
+.page_title {
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #333;
+}
+
+.page_subtitle {
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+/* Container principal para a lista */
+.list_container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto; /* Centraliza o container */
+}
+
+/* Cabeçalho da lista com o botão de adicionar */
+.list_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+/* Botão para adicionar novo casamento */
+.add_new_button {
+  background-color: var(--gold-color);
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 1px solid var(--gold-color);
+}
+
+.add_new_button:hover {
+  background-color: #fff;
+  color: var(--gold-color);
+}
+
+.add_new_button i {
+  margin-right: 8px;
+}
+
+/* Card que contém a lista */
+.list_card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden; /* Garante que os cantos arredondados sejam aplicados aos itens internos */
+}
+
+/* Cada item da lista de casamentos */
+.wedding_list_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.wedding_list_item:last-child {
+  border-bottom: none; /* Remove a borda do último item */
+}
+
+.wedding_list_item:hover {
+  background-color: #fdf8f5; /* Um fundo levemente rosado/dourado no hover */
+}
+
+.item_details h3 {
+  font-family: var(--heading-font);
+  font-size: 1.6rem;
+  color: #333;
+  margin: 0 0 5px 0;
+}
+
+.item_details p {
+  color: var(--text-color);
+  margin: 0;
+}
+
+.item_action span {
+  color: var(--gold-color);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+

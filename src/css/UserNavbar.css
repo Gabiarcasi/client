@@ -1,0 +1,40 @@
+.user_navbar {
+    background-color: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+}
+
+.navbar_logo {
+    height: 40px; /* Ajuste a altura conforme necessário */
+    width: auto;
+}
+
+/* Estilos para o dropdown do Bootstrap */
+.user_dropdown .dropdown-toggle {
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.user_dropdown .dropdown-toggle::after {
+    margin-left: 0.5em;
+}
+
+.user_dropdown .dropdown-menu {
+    border-radius: 8px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.user_dropdown .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+}
+
+.user_dropdown .dropdown-item i {
+    color: var(--gold-color);
+}

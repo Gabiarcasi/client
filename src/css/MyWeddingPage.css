@@ -1,0 +1,16 @@
+.form_card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+.form_card_title {
+  font-family: var(--heading-font);
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 25px;
+  color: #333;
+}
+

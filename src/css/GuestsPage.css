@@ -1,0 +1,111 @@
+/* Painel de Filtros */
+.filter_panel {
+    padding: 20px 25px;
+}
+
+.custom_status_toggle {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Remove a seta padrão do botão do dropdown do Bootstrap */
+.custom_status_toggle::after {
+    display: none;
+}
+
+.filter_label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-color-light);
+    margin-bottom: 5px;
+}
+
+.filter_results_count {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-top: 25px; /* Alinha verticalmente com os inputs */
+    display: inline-block;
+}
+
+
+/* Tabela de Convidados (Ajustes) */
+.guest_table thead th {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 15px;
+}
+
+.guest_table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+
+/* Novo Badge de Status Aprimorado */
+.guest_status_badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.status_dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+/* Cores para os Badges */
+.guest_status_badge.status_confirmed {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+}
+.guest_status_badge.status_confirmed .status_dot {
+    background-color: var(--success-text);
+}
+
+.guest_status_badge.status_declined {
+    background-color: var(--error-bg);
+    color: var(--error-text);
+}
+.guest_status_badge.status_declined .status_dot {
+    background-color: var(--error-text);
+}
+
+.guest_status_badge.status_pending {
+    background-color: #f0f0f0;
+    color: #555;
+}
+.guest_status_badge.status_pending .status_dot {
+    background-color: #888;
+}
+
+/* Estilo para Botões de Ação com Ícone (sem fundo/borda, ícone dourado) */
+.button_action {
+    background: none;
+    border: none;
+    padding: 0.25rem 0.5rem; /* Ajuste o padding conforme necessário */
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    font-size: 1.1rem; /* Tamanho do ícone */
+    color: var(--gold-color); /* A cor dourada principal */
+}
+
+.button_action:hover {
+    color: var(--primary-color-dark); /* Um dourado um pouco mais escuro ao passar o mouse, ou um cinza sutil */
+    background-color: rgba(0, 0, 0, 0.05); /* Um fundo sutil ao passar o mouse */
+    border-radius: 4px;
+}
+
+/* Para botões de ação de perigo (ex: excluir) */
+.button_action.text-danger {
+    color: var(--error-text); /* Cor vermelha para ícones de exclusão */
+}
+
+.button_action.text-danger:hover {
+    color: var(--error-color-dark);
+}
