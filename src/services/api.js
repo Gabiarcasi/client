@@ -3,17 +3,33 @@
  *
  * @description Este arquivo exporta uma instância do Axios pré-configurada,
  * que atua como o ponto central para todas as comunicações com o backend.
- * Ele utiliza "interceptors" para gerenciar automaticamente a autenticação
- * do usuário de forma transparente, lidando com a expiração de tokens.
+ * Ele utiliza uma variável de ambiente para definir o endereço da API,
+ * permitindo que o frontend funcione tanto em ambiente de desenvolvimento
+ * quanto em produção sem precisar de alterações no código.
  */
 
+// Importa a biblioteca Axios para fazer requisições HTTP
 import axios from 'axios';
 
+// Cria uma instância personalizada do Axios
 const api = axios.create({
-	baseURL: 'https://mariage-api.onrender.com',
+	// --- ALTERAÇÃO PRINCIPAL AQUI ---
+	// Usa a variável de ambiente `VITE_API_BASE_URL` definida na Vercel.
+	// Se ela não existir (ambiente local), usa o endereço do servidor local como padrão.
+	baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001/api',
+	
+	// Permite que o Axios envie cookies com as requisições, o que é crucial
+	// para o Refresh Token que está armazenado em um cookie HTTP-only.
 	withCredentials: true
 });
 
+/**
+ * Interceptor de Requisições
+ *
+ * @description Intercepta cada requisição antes que ela seja enviada.
+ * Se houver um `authToken` no `localStorage`, ele é adicionado ao cabeçalho
+ * `Authorization` no formato `Bearer token`.
+ */
 api.interceptors.request.use(
 	(config) => {
 		const token = localStorage.getItem('authToken');
@@ -25,8 +41,15 @@ api.interceptors.request.use(
 	(error) => Promise.reject(error)
 );
 
+/**
+ * Interceptor de Respostas
+ *
+ * @description Intercepta cada resposta da API. Se uma requisição protegida
+ * falhar com um erro `401 Unauthorized`, este interceptor tenta de forma
+ * automática e silenciosa obter um novo Access Token.
+ */
 api.interceptors.response.use(
-	(response) => response,
+	(response) => response, // Se a resposta for bem-sucedida, simplesmente a retorna.
 	async (error) => {
 		const originalRequest = error.config;
 
